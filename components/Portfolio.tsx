@@ -60,15 +60,20 @@ const Portfolio: React.FC = () => {
           {projects.map((project, idx) => (
             <div 
               key={idx} 
-              className="group flex flex-col bg-white rounded-3xl overflow-hidden border border-slate-100 hover:shadow-2xl hover:shadow-indigo-100 transition-all duration-500"
+              className="group flex flex-col bg-white rounded-3xl overflow-hidden border border-slate-100 hover:border-indigo-200 hover:shadow-2xl hover:shadow-indigo-100 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.01]"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-indigo-600/0 group-hover:bg-indigo-600/10 transition-colors duration-500"></div>
+                {/* Refined Color Overlay */}
+                <div className="absolute inset-0 bg-indigo-600/0 group-hover:bg-indigo-600/10 transition-colors duration-500 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                   <div className="p-3 bg-white/90 backdrop-blur-sm rounded-full shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                      <ExternalLink className="h-6 w-6 text-indigo-600" />
+                   </div>
+                </div>
               </div>
               <div className="p-8 flex flex-col flex-grow">
                 <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">
@@ -81,7 +86,7 @@ const Portfolio: React.FC = () => {
                   {project.tools.map((tool) => (
                     <span 
                       key={tool} 
-                      className="px-3 py-1 text-xs font-semibold text-slate-600 bg-slate-100 rounded-lg border border-slate-200"
+                      className="px-3 py-1 text-xs font-semibold text-slate-600 bg-slate-100 rounded-lg border border-slate-200 group-hover:border-indigo-100 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors duration-300"
                     >
                       {tool}
                     </span>

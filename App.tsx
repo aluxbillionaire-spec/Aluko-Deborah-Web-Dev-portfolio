@@ -13,6 +13,7 @@ const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
+    // Scroll active section highlighter
     const handleScroll = () => {
       const sections = ['home', 'about', 'skills', 'experience', 'portfolio', 'contact'];
       const scrollPosition = window.scrollY + 100;
@@ -30,8 +31,31 @@ const App: React.FC = () => {
       }
     };
 
+    // Intersection Observer for reveal animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    const sectionElements = document.querySelectorAll('section');
+    sectionElements.forEach((section) => {
+      section.classList.add('reveal');
+      observer.observe(section);
+    });
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
   return (
