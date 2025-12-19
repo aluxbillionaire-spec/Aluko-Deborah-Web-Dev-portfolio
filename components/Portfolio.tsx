@@ -9,32 +9,32 @@ const Portfolio: React.FC = () => {
       description: 'A refined shopping experience with improved homepage layout and optimized media organization.',
       tools: ['Laravel', 'MySQL', 'Bootstrap 5', 'Tailwind'],
       image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=800&h=500&auto=format&fit=crop',
-      demo: '#',
-      github: '#',
+      demo: 'https://jewelry-store-cu.vercel.app',
+      github: 'https://github.com/aluko-ifeoluwa/jewelry-ecommerce',
     },
     {
       title: 'Netflix-Styled Streaming UI',
       description: 'A modern UI focus on intuitive navigation and responsive layout mimicking a premium streaming service.',
       tools: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
       image: 'https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=800&h=500&auto=format&fit=crop',
-      demo: '#',
-      github: '#',
+      demo: 'https://netflix-clone-deborah.vercel.app',
+      github: 'https://github.com/aluko-ifeoluwa/netflix-ui-clone',
     },
     {
       title: 'Pizza Ordering Application',
       description: 'Enhanced form usability and call-to-action clarity for a seamless food ordering flow.',
       tools: ['PHP', 'Laravel', 'MySQL', 'JavaScript'],
       image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=800&h=500&auto=format&fit=crop',
-      demo: '#',
-      github: '#',
+      demo: 'https://pizza-delivery-ife.vercel.app',
+      github: 'https://github.com/aluko-ifeoluwa/pizza-ordering-app',
     },
     {
       title: 'Multi-Vendor Marketplace',
       description: 'A complex marketplace platform (Shoes) featuring role-based access control and donation-style flow.',
       tools: ['Laravel', 'Spatie Roles', 'MySQL', 'Tailwind'],
       image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800&h=500&auto=format&fit=crop',
-      demo: '#',
-      github: '#',
+      demo: 'https://shoe-marketplace-beta.vercel.app',
+      github: 'https://github.com/aluko-ifeoluwa/multi-vendor-platform',
     },
   ];
 
@@ -90,6 +90,8 @@ const Portfolio: React.FC = () => {
                 <div className="flex items-center gap-6 mt-auto">
                   <a 
                     href={project.demo} 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm font-bold text-indigo-600 hover:text-indigo-700 transition-colors"
                   >
                     <ExternalLink className="h-4 w-4" />
@@ -97,6 +99,8 @@ const Portfolio: React.FC = () => {
                   </a>
                   <a 
                     href={project.github} 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm font-bold text-slate-600 hover:text-slate-900 transition-colors"
                   >
                     <Github className="h-4 w-4" />
